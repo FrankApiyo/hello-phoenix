@@ -5,9 +5,13 @@ defmodule Hello.ShoppingCart do
 
   import Ecto.Query, warn: false
   alias Hello.Repo
-
   alias Hello.Catalog
   alias Hello.ShoppingCart.{Cart, CartItem}
+
+  def prune_cart_items(%Cart{} = cart) do
+    {_, _} = Repo.delete_all(from(i in CartItem, where: i.cart_id == ^cart.id))
+    {:ok, reload_cart(cart)}
+  end
 
   def total_item_price(%CartItem{} = item) do
     Decimal.mult(item.product.price, item.quantity)
