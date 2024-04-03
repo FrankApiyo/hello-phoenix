@@ -1,5 +1,5 @@
 # Hello
-
+db_name: `lucid_allen`
 To start your Phoenix server:
 
   * Run `mix setup` to install and setup dependencies
