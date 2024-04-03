@@ -1,5 +1,8 @@
 # Hello
-db_name: `lucid_allen`
+A phoenix app I build while reading the official intro/documentation hosted
+[here](https://hexdocs.pm/phoenix/overview.html)
+
+To start DB: `docker run -d -p 5432:5432 -e POSTGRES_USER=hello -e POSTGRES_DB=hello_dev -e POSTGRES_PASSWORD=hello postgis/postgis:13-3.3`
 To start your Phoenix server:
 
   * Run `mix setup` to install and setup dependencies
